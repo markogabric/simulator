@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulator.Controller">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut" />
+                        <MenuItem mnemonicParsing="false" text="Copy" />
+                        <MenuItem mnemonicParsing="false" text="Paste" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Select All" />
+                        <MenuItem mnemonicParsing="false" text="Unselect All" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <SplitPane fx:id="splitPane" dividerPositions="0.25, 0.75" focusTraversable="true" prefHeight="-1.1" prefWidth="-1.1" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane>
+                    <children>
+                        <Accordion layoutX="10.0" layoutY="165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <panes>
+                                <TitledPane animated="false" text="Digital Units">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <Pane fx:id="unit" layoutX="55.0" layoutY="107.0" prefHeight="219.0" prefWidth="110.0" style="-fx-background-color: #A8D5BA;">
+                                                    <effect>
+                                                        <DropShadow>
+                                                            <color>
+                                                                <Color red="0.30263158679008484" green="0.26059940457344055" blue="0.26059940457344055" />
+                                                            </color>
+                                                        </DropShadow>
+                                                    </effect>
+                                                    <children>
+                                                        <Circle layoutX="110.0" layoutY="30.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                                            <fill>
+                                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                                    <stops>
+                                                                        <Stop>
+                                                                            <color>
+                                                                                <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                        <Stop offset="1.0">
+                                                                            <color>
+                                                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                    </stops>
+                                                                </RadialGradient>
+                                                            </fill>
+                                                        </Circle>
+                                                        <Circle layoutX="110.0" layoutY="54.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                                            <fill>
+                                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                                    <stops>
+                                                                        <Stop>
+                                                                            <color>
+                                                                                <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                        <Stop offset="1.0">
+                                                                            <color>
+                                                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                    </stops>
+                                                                </RadialGradient>
+                                                            </fill>
+                                                        </Circle>
+                                                        <Circle layoutX="110.0" layoutY="82.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                                            <fill>
+                                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                                    <stops>
+                                                                        <Stop>
+                                                                            <color>
+                                                                                <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                        <Stop offset="1.0">
+                                                                            <color>
+                                                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                    </stops>
+                                                                </RadialGradient>
+                                                            </fill>
+                                                        </Circle>
+                                                        <Circle layoutX="110.0" layoutY="108.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                                            <fill>
+                                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                                    <stops>
+                                                                        <Stop>
+                                                                            <color>
+                                                                                <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                        <Stop offset="1.0">
+                                                                            <color>
+                                                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                                                            </color>
+                                                                        </Stop>
+                                                                    </stops>
+                                                                </RadialGradient>
+                                                            </fill>
+                                                        </Circle>
+                                                        <Label layoutX="90.0" layoutY="22.0" text="A" />
+                                                        <Label layoutX="90.0" layoutY="46.0" text="B" />
+                                                        <Label layoutX="90.0" layoutY="74.0" text="C" />
+                                                        <Label layoutX="90.0" layoutY="100.0" text="D" />
+                                          <Circle layoutX="110.0" layoutY="130.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Circle layoutX="110.0" layoutY="152.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Circle layoutX="110.0" layoutY="174.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Circle layoutX="110.0" layoutY="198.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Label layoutX="90.0" layoutY="122.0" text="E" />
+                                          <Label layoutX="90.0" layoutY="144.0" text="F" />
+                                          <Label layoutX="90.0" layoutY="166.0" text="G" />
+                                          <Label layoutX="90.0" layoutY="190.0" text="H" />
+                                          <Label layoutX="40.0" layoutY="10.0" text="DU" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Sitka Display" size="24.0" />
+                                             </font>
+                                          </Label>
+                                                    </children>
+                                                </Pane>
+                                    <Button fx:id="DUbutton" layoutX="91.0" layoutY="347.0" mnemonicParsing="false" text="Add" />
+                                            </children></AnchorPane>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane animated="false" text="Radio Units">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane fx:id="unit1" layoutX="55.0" layoutY="80.0" prefHeight="170.0" prefWidth="110.0" style="-fx-background-color: #A3C6F1;">
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="0.32894736528396606" green="0.30001217126846313" blue="0.30001217126846313" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <children>
+                                          <Circle layoutY="32.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Circle layoutY="131.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Label layoutX="10.0" layoutY="24.0" text="1" />
+                                          <Label layoutX="10.0" layoutY="55.0" text="2" />
+                                          <Label layoutX="10.0" layoutY="93.0" text="3" />
+                                          <Label layoutX="10.0" layoutY="123.0" text="4" />
+                                          <Circle layoutX="110.0" layoutY="32.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Circle layoutX="110.0" layoutY="63.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Circle layoutX="110.0" layoutY="131.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Label layoutX="90.0" layoutY="24.0" text="5" />
+                                          <Label layoutX="90.0" layoutY="55.0" text="6" />
+                                          <Label layoutX="90.0" layoutY="92.0" text="7" />
+                                          <Label layoutX="90.0" layoutY="123.0" text="8" />
+                                          <Circle layoutX="110.0" layoutY="100.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Circle layoutY="101.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                             <fill>
+                                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="1.0" green="1.0" blue="1.0" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </RadialGradient>
+                                             </fill>
+                                          </Circle>
+                                          <Label layoutX="40.0" layoutY="11.0" text="RU" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Sitka Display" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Button fx:id="RUbutton" layoutX="91.0" layoutY="262.0" mnemonicParsing="false" text="Add" />
+                                    <Circle layoutX="55.0" layoutY="143.0" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                       <fill>
+                                          <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color red="0.08784113079309464" green="0.09004426747560501" blue="0.09210526198148727" />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="1.0" green="1.0" blue="1.0" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </RadialGradient>
+                                       </fill>
+                                    </Circle>
+                                 </children></AnchorPane>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane animated="false" text="Auxilary Units">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                </TitledPane>
+                            </panes>
+                        </Accordion>
+                    </children>
+                </AnchorPane>
+            <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Configured">
+                  <content>
+                    <AnchorPane fx:id="confPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                <Tab text="Connected">
+                  <content>
+                    <AnchorPane fx:id="connPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+                <AnchorPane>
+                    <children>
+                  <Button fx:id="inputButton" layoutX="162.0" layoutY="149.0" mnemonicParsing="false" text="Add" />
+                        <Label fx:id="details" alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" wrapText="false">
+                     <textFill>
+                                  <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+                     </textFill>
+                     <font>
+                                  <Font size="18.0" fx:id="x1" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="detailsSerialNumberField" layoutX="13.0" layoutY="149.0" promptText="Serial number..." />
+                  <Button fx:id="clearButton" layoutX="81.0" layoutY="512.0" mnemonicParsing="false" text="Clear All" />
+                  <Label fx:id="detailsNameLabel" layoutX="15.0" layoutY="63.0" text="Name:" />
+                  <TextField fx:id="detailsNameField" editable="false" layoutX="15.0" layoutY="86.0" prefWidth="186.0" />
+                  <TextField fx:id="detailsFarField" editable="false" layoutX="15.0" layoutY="218.0" prefWidth="186.0" />
+                  <TextField fx:id="detailsNearField" editable="false" layoutX="15.0" layoutY="149.0" prefWidth="186.0" />
+                  <Label fx:id="detailsFarLabel" layoutX="15.0" layoutY="194.0" text="Far unit:" />
+                  <Label fx:id="detailsNearLabel" layoutX="15.0" layoutY="124.0" text="Near unit:" />
+                  <Label fx:id="detailsSerialNumberLabel" layoutX="15.0" layoutY="124.0" text="Serial number" />
+                  <TextArea fx:id="detailsAlarmsField" editable="false" layoutX="15.0" layoutY="337.0" prefHeight="157.0" prefWidth="193.0" promptText="No alarms found." />
+                  <Label fx:id="detailsAlarmsLabel" layoutX="15.0" layoutY="314.0" text="Alarms:" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+                <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="11.0" fx:id="x3" />
+                    </font>
+                    <textFill>
+                        <Color red="0.625" green="0.625" blue="0.625" fx:id="x4" />
+                    </textFill>
+                </Label>
+                <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                <Label font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>
