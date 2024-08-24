@@ -279,7 +279,7 @@ public class Controller implements Initializable {
         vm.setViewLinkFault(linkName, faultInfo);
     }
 
-    public String createRandomSerialNumber() {
+    private String createRandomSerialNumber() {
         final String CHAR_POOL = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
         StringBuilder sb = new StringBuilder(10);
         Random random = new Random();
@@ -293,7 +293,7 @@ public class Controller implements Initializable {
         return sb.toString();
     }
 
-    void clearAll() {
+    private void clearAll() {
         db.clearTopology();
         vm.clearView();
 

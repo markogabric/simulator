@@ -5,39 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1024026c-f0d0-4d67-9292-815e2e939df9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/EndpointsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/FaultEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/FaultType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/LinkEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/PortEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/PortRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/UnitEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/UnitType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/TopologyManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/View/DetailsType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/View/DigitalUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/View/Link.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/View/Port.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/View/PortLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/View/RadioUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/View/ViewType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/ViewManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/simulator/simulator.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/EndpointsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/EndpointsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/LinkEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/LinkEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/TopologyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/TopologyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/simulator/simulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/simulator/simulator.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -24,7 +24,7 @@ public class TopologyManager {
         this.links = new ArrayList<LinkEntry>();
     }
 
-    public UnitEntry findUnitById(Integer id) {
+    public UnitEntry getUnitById(Integer id) {
         for (UnitEntry unit : units) {
             if (unit.getId().equals(id)) {
                 return unit;
@@ -34,7 +34,7 @@ public class TopologyManager {
          return null;
     }
 
-    public PortEntry findPortById(Integer id) {
+    public PortEntry getPortById(Integer id) {
         for (PortEntry port : ports) {
             if (port.getId().equals(id)) {
                 return port;
@@ -44,7 +44,7 @@ public class TopologyManager {
         return null;
     }
 
-    public LinkEntry findLinkById(Integer id) {
+    public LinkEntry getLinkById(Integer id) {
         for (LinkEntry link : links) {
             if (link.getId().equals(id)) {
                 return link;
@@ -54,7 +54,7 @@ public class TopologyManager {
         return null;
     }
 
-    public UnitEntry findUnitByName(String unitName) {
+    public UnitEntry getUnitByName(String unitName) {
         for (UnitEntry unit : this.units) {
             if (unit.getName().equals(unitName))
                 return unit;
@@ -63,7 +63,7 @@ public class TopologyManager {
         return null;
     }
 
-    public LinkEntry findLinkByName(String linkName) {
+    public LinkEntry getLinkByName(String linkName) {
         for (LinkEntry link : this.links) {
             if (link.getName().equals(linkName))
                 return link;
@@ -72,7 +72,7 @@ public class TopologyManager {
         return null;
     }
 
-    public PortEntry findPortByUnitAndName(UnitEntry unit, String portName) {
+    public PortEntry getPortByUnitAndName(UnitEntry unit, String portName) {
         for (PortEntry port : this.ports) {
             if (port.getUnit().getId().equals(unit.getId()) && port.getName().equals(portName))
                 return port;
@@ -81,12 +81,12 @@ public class TopologyManager {
         return null;
     }
 
-    public LinkEntry findLinkByUnitAndPortNames(String unitName, String portName) {
-        UnitEntry unit = findUnitByName(unitName);
+    public LinkEntry getLinkByUnitAndPortNames(String unitName, String portName) {
+        UnitEntry unit = getUnitByName(unitName);
         if (unit == null)
             return null;
 
-        PortEntry port = findPortByUnitAndName(unit, portName);
+        PortEntry port = getPortByUnitAndName(unit, portName);
         if (port == null)
             return null;
 
@@ -95,7 +95,7 @@ public class TopologyManager {
     }
 
     public LinkEntry getLinkByPort(UnitEntry unit, String portName) {
-        PortEntry port = findPortByUnitAndName(unit, portName);
+        PortEntry port = getPortByUnitAndName(unit, portName);
         if (port == null)
             return null;
 
@@ -139,7 +139,7 @@ public class TopologyManager {
     }
 
     public void registerPort(String portName, PortRole portRole, String unitName) {
-        UnitEntry unit = findUnitByName(unitName);
+        UnitEntry unit = getUnitByName(unitName);
         if (unit == null) {
             System.out.println("Unit " + unitName + " not found");
             return;
@@ -153,25 +153,25 @@ public class TopologyManager {
     }
 
     public void registerLinkConfigured(String linkName, String nearEndUnitName, String nearEndPortName, String farEndUnitName, String farEndPortName) {
-        UnitEntry nearEndUnit = findUnitByName(nearEndUnitName);
+        UnitEntry nearEndUnit = getUnitByName(nearEndUnitName);
         if (nearEndUnit == null) {
             System.out.println("Unit " + nearEndUnitName + " not found");
             return;
         }
 
-        UnitEntry farEndUnit = findUnitByName(farEndUnitName);
+        UnitEntry farEndUnit = getUnitByName(farEndUnitName);
         if (farEndUnit == null) {
             System.out.println("Unit " + nearEndUnitName + " not found");
             return;
         }
 
-        PortEntry nearEndPort = findPortByUnitAndName(nearEndUnit, nearEndPortName);
+        PortEntry nearEndPort = getPortByUnitAndName(nearEndUnit, nearEndPortName);
         if (nearEndPort == null) {
             System.out.println("Port " + nearEndPortName + " on unit " + nearEndUnit.getName() + " not found");
             return;
         }
 
-        PortEntry farEndPort = findPortByUnitAndName(farEndUnit, farEndPortName);
+        PortEntry farEndPort = getPortByUnitAndName(farEndUnit, farEndPortName);
         if (farEndPort == null) {
             System.out.println("Port " + farEndPortName + " on unit " + farEndUnit.getName() + " not found");
             return;
@@ -196,13 +196,13 @@ public class TopologyManager {
     }
 
     public void registerLinkConnected(String nearEndUnitName, String nearEndPortName, String endpointSerialNumber, String endpointPortName) {
-        UnitEntry nearEndUnit = findUnitByName(nearEndUnitName);
+        UnitEntry nearEndUnit = getUnitByName(nearEndUnitName);
         if (nearEndUnit == null) {
             System.out.println("Unit " + nearEndUnitName + " not found");
             return;
         }
 
-        PortEntry nearEndPort = findPortByUnitAndName(nearEndUnit, nearEndPortName);
+        PortEntry nearEndPort = getPortByUnitAndName(nearEndUnit, nearEndPortName);
         if (nearEndPort == null) {
             System.out.println("Port " + nearEndPortName + " on unit " + nearEndUnit.getName() + " not found");
             return;

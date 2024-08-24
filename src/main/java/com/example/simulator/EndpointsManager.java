@@ -20,7 +20,7 @@ public class EndpointsManager {
         Set<LinkEntry> impactedLinks = new HashSet<>();
         db.registerLinkConfigured(linkName, nearEndUnitName, nearEndPortName, farEndUnitName, farEndPortName);
 
-        UnitEntry farEndUnit = db.findUnitByName(farEndUnitName);
+        UnitEntry farEndUnit = db.getUnitByName(farEndUnitName);
         getImpactedLinks(farEndUnit, impactedLinks);
 
         System.out.println("Link configured");
@@ -33,7 +33,7 @@ public class EndpointsManager {
     public void handleLinkConnected(String nearEndUnitName, String nearEndPortName, String endpointSerialNumber, String endpointPortName) {
         Set<LinkEntry> impactedLinks = new HashSet<>();
 
-        LinkEntry link = db.findLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
+        LinkEntry link = db.getLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
         if (link == null || !link.isLinkConfigured()) {
             db.registerLinkConnected(nearEndUnitName, nearEndPortName, endpointSerialNumber, endpointPortName);
             return;
@@ -53,7 +53,7 @@ public class EndpointsManager {
     public void handleLinkUnconfigured(String nearEndUnitName, String nearEndPortName) {
         Set<LinkEntry> impactedLinks = new HashSet<>();
 
-        LinkEntry link = db.findLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
+        LinkEntry link = db.getLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
         if (link == null) {
             System.out.println("Link on unit " + nearEndUnitName + " and port " + nearEndPortName + " not found");
             return;
@@ -77,7 +77,7 @@ public class EndpointsManager {
     public void handleLinkDisconnected(String nearEndUnitName, String nearEndPortName) {
         Set<LinkEntry> impactedLinks = new HashSet<>();
 
-        LinkEntry link = db.findLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
+        LinkEntry link = db.getLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
         if (link == null) {
             System.out.println("Link on unit " + nearEndUnitName + " and port " + nearEndPortName + " not found");
             return;
@@ -103,7 +103,7 @@ public class EndpointsManager {
     public void handleUnitSNConfigure(String unitName, String serialNumber) {
         Set<LinkEntry> impactedLinks = new HashSet<>();
 
-        UnitEntry unit = db.findUnitByName(unitName);
+        UnitEntry unit = db.getUnitByName(unitName);
         if (unit == null) {
             System.out.println("Unit not found");
             return;
@@ -116,7 +116,7 @@ public class EndpointsManager {
         runMisconnectionAlgorithm(impactedLinks);
     }
 
-    public void getImpactedLinks(UnitEntry unit, Set<LinkEntry> impactedLinks) {
+    private void getImpactedLinks(UnitEntry unit, Set<LinkEntry> impactedLinks) {
         List<LinkEntry> linksToUnit = db.getLinksOfUnit(unit, PortRole.SECONDARY);
 
         Set<String> hwSerialNumbers = new HashSet<>();
@@ -142,7 +142,7 @@ public class EndpointsManager {
         }
     }
 
-    public void runMisconnectionAlgorithm(Set<LinkEntry> impactedLinks) {
+    private void runMisconnectionAlgorithm(Set<LinkEntry> impactedLinks) {
         for(LinkEntry link : impactedLinks) {
             FaultEntry fault = unitMisconnectionCheck(link);
             if (fault == null)
@@ -153,7 +153,7 @@ public class EndpointsManager {
         }
     }
 
-    public FaultEntry unitMisconnectionCheck(LinkEntry link) {
+    private FaultEntry unitMisconnectionCheck(LinkEntry link) {
         if (!link.isLinkConfigured() || !link.isLinkConnected())
             return null;
 
@@ -173,7 +173,7 @@ public class EndpointsManager {
         return null;
     }
 
-    public FaultEntry portMisconnectionCheck(LinkEntry link) {
+    private FaultEntry portMisconnectionCheck(LinkEntry link) {
         if (!link.isLinkConfigured() || !link.isLinkConnected())
             return null;
 
@@ -183,7 +183,7 @@ public class EndpointsManager {
         return null;
     }
 
-    public boolean checkSerialNumberMismatch(LinkEntry link) {
+    private boolean checkSerialNumberMismatch(LinkEntry link) {
         Set<String> serialNumbers = new HashSet<>();
 
         for (LinkEntry l: db.getLinksOfUnit(link.getFarEndPort().getUnit(), PortRole.SECONDARY)) {
@@ -196,7 +196,7 @@ public class EndpointsManager {
         return serialNumbers.size() > 1;
     }
 
-    public boolean checkUnitMismatch(LinkEntry link) {
+    private boolean checkUnitMismatch(LinkEntry link) {
         Set<UnitEntry> units = new HashSet<>();
 
         for (LinkEntry l: db.getLinksByEndpointSerialNumber(link.getEndpointSerialNumber())) {
@@ -209,7 +209,7 @@ public class EndpointsManager {
         return units.size() > 1;
     }
 
-    public FaultEntry createNewFault(FaultType type, LinkEntry link) {
+    private FaultEntry createNewFault(FaultType type, LinkEntry link) {
         String faultInfo;
 
         if (type == FaultType.PORT_MISCONNECTION_FAULT) {
@@ -223,8 +223,8 @@ public class EndpointsManager {
                     link.getFarEndPort().getUnit().getCMSerialNumber(),
                     link.getEndpointSerialNumber());
         } else {
-            faultInfo = String.format("Unit misconnection found on link. Mismatch detected on link(s) between " +
-                    "connected and configured units of this link. Please check your connection.");
+            faultInfo = "Unit misconnection found on link. Mismatch detected on link(s) between " +
+                    "connected and configured units of this link. Please check your connection.";
         }
 
         System.out.println("FAULT: " + faultInfo);

@@ -21,6 +21,7 @@ public class LinkEntry {
         this.farEndPort = farEndPort;
         this.endpointSerialNumber = "";
         this.endpointPortName = "";
+        this.fault = null;
     }
 
     public LinkEntry(Integer id, PortEntry nearEndPort, String endpointSerialNumber, String endpointPortName) {
@@ -32,6 +33,7 @@ public class LinkEntry {
         this.farEndPort = null;
         this.endpointSerialNumber = endpointSerialNumber;
         this.endpointPortName = endpointPortName;
+        this.fault = null;
     }
 
     public Integer getId() { return id; }
