@@ -23,10 +23,6 @@ public class EndpointsManager {
         UnitEntry farEndUnit = db.getUnitByName(farEndUnitName);
         getImpactedLinks(farEndUnit, impactedLinks);
 
-        System.out.println("Link configured");
-        for (LinkEntry linkEntry : impactedLinks) {
-            System.out.println(linkEntry);
-        }
         runMisconnectionAlgorithm(impactedLinks);
     }
 
@@ -43,10 +39,6 @@ public class EndpointsManager {
         db.registerLinkConnected(nearEndUnitName, nearEndPortName, endpointSerialNumber, endpointPortName);
         getImpactedLinks(link.getFarEndPort().getUnit(), impactedLinks);
 
-        System.out.println("Link connected");
-        for (LinkEntry linkEntry : impactedLinks) {
-            System.out.println(linkEntry);
-        }
         runMisconnectionAlgorithm(impactedLinks);
     }
 
@@ -55,7 +47,7 @@ public class EndpointsManager {
 
         LinkEntry link = db.getLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
         if (link == null) {
-            System.out.println("Link on unit " + nearEndUnitName + " and port " + nearEndPortName + " not found");
+            System.err.println("Link on unit " + nearEndUnitName + " and port " + nearEndPortName + " not found");
             return;
         }
 
@@ -67,10 +59,6 @@ public class EndpointsManager {
 
         impactedLinks.remove(link);
 
-        System.out.println("Link unconfigured");
-        for (LinkEntry linkEntry : impactedLinks) {
-            System.out.println(linkEntry);
-        }
         runMisconnectionAlgorithm(impactedLinks);
     }
 
@@ -79,7 +67,7 @@ public class EndpointsManager {
 
         LinkEntry link = db.getLinkByUnitAndPortNames(nearEndUnitName, nearEndPortName);
         if (link == null) {
-            System.out.println("Link on unit " + nearEndUnitName + " and port " + nearEndPortName + " not found");
+            System.err.println("Link on unit " + nearEndUnitName + " and port " + nearEndPortName + " not found");
             return;
         }
 
@@ -93,10 +81,6 @@ public class EndpointsManager {
         db.disconnectLink(link);
         getImpactedLinks(farEndUnit, impactedLinks);
 
-        System.out.println("Link disconnected");
-        for (LinkEntry linkEntry : impactedLinks) {
-            System.out.println(linkEntry);
-        }
         runMisconnectionAlgorithm(impactedLinks);
     }
 
@@ -105,7 +89,7 @@ public class EndpointsManager {
 
         UnitEntry unit = db.getUnitByName(unitName);
         if (unit == null) {
-            System.out.println("Unit not found");
+            System.err.println("Unit not found");
             return;
         }
 
@@ -227,7 +211,6 @@ public class EndpointsManager {
                     "connected and configured units of this link. Please check your connection.";
         }
 
-        System.out.println("FAULT: " + faultInfo);
         return new FaultEntry(faultInfo, type);
     }
 }
