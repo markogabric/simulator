@@ -8,8 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/EndpointsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/EndpointsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/LinkEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Topology/LinkEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/TopologyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/TopologyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/ViewManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/simulator/simulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/simulator/simulator.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

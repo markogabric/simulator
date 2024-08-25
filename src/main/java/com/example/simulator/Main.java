@@ -25,21 +25,21 @@ public class Main extends Application {
 
         Controller controller = fxmlLoader.getController();
 
-        ChangeListener<Number> resizeListener = new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("Changed");
-                controller.setSize();
-            }
-        };
-
         stage.setMinWidth(1280);
         stage.setMinHeight(720);
 
         stage.show();
         Platform.runLater(() -> {
+            ChangeListener<Number> resizeListener = new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                    controller.setSize();
+                }
+            };
             controller.setListeners(resizeListener);
+            Platform.runLater(controller::setSize);
         });
+
     }
 
     public static void main(String[] args) {

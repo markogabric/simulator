@@ -198,16 +198,12 @@ public class Controller implements Initializable {
         clickedPorts.add(port);
 
         if (!checkIsLinkValid()) {
-            System.out.println("Link not valid " + clickedPorts.get(0).getPortRole().name() + clickedPorts.get(1).getPortRole().name());
             clickedPorts.clear();
             return;
         }
 
         Port nearEndPort = clickedPorts.get(0).getPortRole() == PortRole.PRIMARY ? clickedPorts.get(0) : clickedPorts.get(1);
         Port farEndPort =  clickedPorts.get(0).getPortRole() == PortRole.SECONDARY ? clickedPorts.get(0) : clickedPorts.get(1);
-        if (nearEndPort.equals(farEndPort)) {
-            System.out.println("Same");
-        }
 
         createLink(nearEndPort, farEndPort);
         clickedPorts.clear();

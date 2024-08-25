@@ -134,46 +134,42 @@ public class TopologyManager {
         Integer id = ++this.unitCounter;
         UnitEntry unit = new UnitEntry(id, unitName, type);
         units.add(unit);
-
-        System.out.println("Unit registered " + unitName);
     }
 
     public void registerPort(String portName, PortRole portRole, String unitName) {
         UnitEntry unit = getUnitByName(unitName);
         if (unit == null) {
-            System.out.println("Unit " + unitName + " not found");
+            System.err.println("Unit " + unitName + " not found");
             return;
         }
 
         Integer id = ++this.portCounter;
         PortEntry port = new PortEntry(id, portName, portRole, unit);
         ports.add(port);
-
-        System.out.println("Port registered " + portName);
     }
 
     public void registerLinkConfigured(String linkName, String nearEndUnitName, String nearEndPortName, String farEndUnitName, String farEndPortName) {
         UnitEntry nearEndUnit = getUnitByName(nearEndUnitName);
         if (nearEndUnit == null) {
-            System.out.println("Unit " + nearEndUnitName + " not found");
+            System.err.println("Unit " + nearEndUnitName + " not found");
             return;
         }
 
         UnitEntry farEndUnit = getUnitByName(farEndUnitName);
         if (farEndUnit == null) {
-            System.out.println("Unit " + nearEndUnitName + " not found");
+            System.err.println("Unit " + nearEndUnitName + " not found");
             return;
         }
 
         PortEntry nearEndPort = getPortByUnitAndName(nearEndUnit, nearEndPortName);
         if (nearEndPort == null) {
-            System.out.println("Port " + nearEndPortName + " on unit " + nearEndUnit.getName() + " not found");
+            System.err.println("Port " + nearEndPortName + " on unit " + nearEndUnit.getName() + " not found");
             return;
         }
 
         PortEntry farEndPort = getPortByUnitAndName(farEndUnit, farEndPortName);
         if (farEndPort == null) {
-            System.out.println("Port " + farEndPortName + " on unit " + farEndUnit.getName() + " not found");
+            System.err.println("Port " + farEndPortName + " on unit " + farEndUnit.getName() + " not found");
             return;
         }
 
@@ -191,20 +187,18 @@ public class TopologyManager {
         nearEndPort.setLink(newLinkEntry);
         farEndPort.setLink(newLinkEntry);
         links.add(newLinkEntry);
-
-        System.out.println("Link CONF registered " + newLinkEntry.getName());
     }
 
     public void registerLinkConnected(String nearEndUnitName, String nearEndPortName, String endpointSerialNumber, String endpointPortName) {
         UnitEntry nearEndUnit = getUnitByName(nearEndUnitName);
         if (nearEndUnit == null) {
-            System.out.println("Unit " + nearEndUnitName + " not found");
+            System.err.println("Unit " + nearEndUnitName + " not found");
             return;
         }
 
         PortEntry nearEndPort = getPortByUnitAndName(nearEndUnit, nearEndPortName);
         if (nearEndPort == null) {
-            System.out.println("Port " + nearEndPortName + " on unit " + nearEndUnit.getName() + " not found");
+            System.err.println("Port " + nearEndPortName + " on unit " + nearEndUnit.getName() + " not found");
             return;
         }
 
@@ -219,8 +213,6 @@ public class TopologyManager {
         LinkEntry newLinkEntry = new LinkEntry(id, nearEndPort,endpointSerialNumber,endpointPortName);
         nearEndPort.setLink(newLinkEntry);
         links.add(newLinkEntry);
-
-        System.out.println("Link CONN registered " + newLinkEntry.getEndpointSerialNumber());
     }
 
     public void unconfigureLink(LinkEntry link) {

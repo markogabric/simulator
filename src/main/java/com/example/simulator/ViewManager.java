@@ -215,7 +215,7 @@ public class ViewManager {
     public void setViewLinkFault(String linkName, String faultInfo) {
         Link link = getLinkByName(linkName);
         if (link == null) {
-            System.out.println("Link not found: " + linkName);
+            System.err.println("Link not found: " + linkName);
             return;
         }
 

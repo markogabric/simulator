@@ -401,7 +401,7 @@
             </TabPane>
                 <AnchorPane>
                     <children>
-                  <Button fx:id="inputButton" layoutX="162.0" layoutY="149.0" mnemonicParsing="false" text="Add" />
+                  <Button fx:id="inputButton" layoutX="162.0" layoutY="149.0" mnemonicParsing="false" text="Save" />
                         <Label fx:id="details" alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" wrapText="false">
                      <textFill>
                                   <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
