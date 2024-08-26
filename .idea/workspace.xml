@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1024026c-f0d0-4d67-9292-815e2e939df9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/EndpointsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/EndpointsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/TopologyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/TopologyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/simulator/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/simulator/ViewManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/simulator/simulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/simulator/simulator.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +105,7 @@
       <workItem from="1722646597437" duration="4307000" />
       <workItem from="1723134212704" duration="3034000" />
       <workItem from="1723222755917" duration="12285000" />
+      <workItem from="1724647423553" duration="1303000" />
     </task>
     <servers />
   </component>
